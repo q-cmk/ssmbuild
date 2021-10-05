@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="www.wang.dao.UserMapper">
+    <select id="login" resultType="www.wang.pojo.User">
+        select * from tb_user where username = #{username}
+    </select>
+    <insert id="addUser" parameterType="www.wang.pojo.User">
+        insert into tb_user (id, username, password)
+       VALUES  (#{id},#{username},#{password})#  这里写错顺序会导致用户名与密码颠倒
+    </insert>
+</mapper>
